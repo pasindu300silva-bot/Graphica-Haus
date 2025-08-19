@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphica Haus - Portfolio</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      background: #f9fbfd;
+      color: #333;
+    }
+
+    /* Navigation */
+    header {
+      background: linear-gradient(90deg, #2c3e50, #3498db);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    nav h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd59;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      color: #222;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      animation: fadeInDown 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      background: #2c3e50;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #3498db;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .portfolio-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-item h3 {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Services */
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .services-list li {
+      list-style: none;
+      flex: 1 1 200px;
+      padding: 20px;
+      background: #ecf5ff;
+      border-radius: 10px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .services-list li:hover {
+      background: #d0e8ff;
+      transform: scale(1.05);
+    }
+
+    /* Contact */
+    #contact p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer .socials {
+      margin-top: 10px;
+    }
+
+    footer .socials a {
+      margin: 0 10px;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer .socials a:hover {
+      color: #ffdd59;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h1>Graphica Haus</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h2>Pasindu Lakshan Silva</h2>
+      <p>Founder of <strong>Graphica Haus</strong><br>Creative Designer & Software Engineering Student</p>
+      <a href="#contact" class="btn">Hire Me</a>
+      <a href="#" class="btn">Download CV</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m <strong>Pasindu Lakshan Silva</strong>, a 22-year-old creative mind behind <strong>Graphica Haus</strong>. 
+      Currently studying <strong>Software Engineering</strong>, I blend creativity and technology to deliver professional graphic design work. 
+      I specialize in creating clean, impactful, and high-quality designs that bring ideas to life.
+    </p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>My Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+        <h3>Project Placeholder 1</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+        <h3>Project Placeholder 2</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250" alt="Project 3">
+        <h3>Project Placeholder 3</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250" alt="Project 4">
+        <h3>Project Placeholder 4</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Services</h2>
+    <ul class="services-list">
+      <li>Flyer & Poster Design</li>
+      <li>Social Media Graphics</li>
+      <li>Logo & Branding</li>
+      <li>CV & Resume Design</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <em>your-email@example.com</em></p>
+    <p>Phone/WhatsApp: <em>+94 XXX XXX XXX</em></p>
+    <p>Social Media: (links coming soon)</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Graphica Haus | Designed by Pasindu Lakshan Silva</p>
+    <div class="socials">
+      <a href="#">🌐</a>
+      <a href="#">📘</a>
+      <a href="#">📸</a>
+      <a href="#">💼</a>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    function checkScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add("show");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    window.addEventListener("load", checkScroll);
+  </script>
+</body>
+</html>
